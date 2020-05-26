@@ -1,14 +1,16 @@
 body {
-    color: darkslategrey;
+    color: black;
     font-family: Arial;
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
-    background-color: cadetblue;
+    /* background-color: darkorange; */
+    background-image: url('/img/weather.png');
+    background-position: center;
 }
 
 footer {
-    color: rgb(167, 189, 189);
+    color: black;
     border-top: thin solid #eeeeee;
     margin-top: 16px;
     padding-top: 16px 0;
@@ -16,6 +18,12 @@ footer {
     bottom: 0;
     width: 650px;
     text-align: right;
+}
+
+footer p {
+    color: black
+    font-weight: 700;
+    font-style: italic;
 }
 
 header {
@@ -29,9 +37,10 @@ h1 {
 
 header a {
     text-decoration: none;
-    color: darkslategrey;
+    color: black;
     margin-right: 16px;
     font-size: large;
+    font-weight: bold;
 }
 
 img {
@@ -48,7 +57,30 @@ img {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: large;
+    color: black;
 }
+
+#searchId {
+    margin-left: 20px;
+    padding: 15px;
+    border: thin;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: ivory;
+    font-weight: bold;
+    font-family: arial;
+    cursor: pointer;
+}
+
+#forecastInfo1, #forecastInfo2 {
+    font-weight: bold;
+}
+
+#rportCardHeader {
+    display: none;
+}
+
 /* img {
     height: 20%;
     width: 40%;
