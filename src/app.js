@@ -66,8 +66,10 @@ app.get('/weather', (req, response) => {
                     err
                 })
             }
+            console.log('data');
             response.send({
-                foreCastData: data,
+                foreCastWeatherSummary: data.foreCastWeatherSummary,
+                weatherStatusIcon: data.weatherStatusIcon,
                 locationName: res.place_name,
                 address: req.query.address
             })

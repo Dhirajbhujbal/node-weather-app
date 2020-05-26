@@ -30,7 +30,10 @@ const getForCastData = (latLng, callbackFun) => {
             if(res && res.success === false) {
                 callbackFun(res.error.info, undefined)
             } else if(res.current)  {
-                callbackFun(undefined, `${res.current.weather_descriptions[0]}, It is currently ${res.current.temperature} degrees out. It feelis like ${res.current.feelslike} degrees out`)
+                callbackFun(undefined, {
+                    foreCastWeatherSummary : `${res.current.weather_descriptions[0]}, It is currently ${res.current.temperature} degrees out. It feelis like ${res.current.feelslike} degrees out`, 
+                    weatherStatusIcon: res.current.weather_icons[0]
+                })
             }
         })
         

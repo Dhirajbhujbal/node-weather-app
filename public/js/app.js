@@ -9,25 +9,34 @@ setTimeout( () => {
     const forecastInfo1 = document.querySelector('#forecastInfo1');
     const forecastInfo2 = document.querySelector('#forecastInfo2');
     const rportCardHeader = document.querySelector('#rportCardHeader');
-
+    const imageid = document.querySelector('#imageId');
+    const cityName = document.querySelector('.cityName');
     
 
     btnId.addEventListener('click', (e) => {
         const searchValue = document.getElementsByClassName('inputBox')[0].value
         forecastInfo1.textContent = 'Loading.......';
         forecastInfo2.textContent = '';
+        imageid.style.display = 'none';
+        cityName.textContent = '';
         fetch(`/weather?address=${searchValue}`).then((res) => {
             return res.json();
         }).then((res) => {
             if(res.error) {
                 forecastInfo1.textContent = res.error;
                 rportCardHeader.style.display = 'none';
-                forecastInfo2.textContent = ''
+                forecastInfo2.textContent = '';
+                cityName.textContent = '';
+                imageid.style.display = 'none';
             } else {
+                console.log('weatherStatusIcon    ----', res.weatherStatusIcon)
                 rportCardHeader.style.display = 'block';
-                forecastInfo1.textContent = res.foreCastData;
+                forecastInfo1.textContent = res.foreCastWeatherSummary;
                 forecastInfo2.textContent = res.locationName;
-                // console.log(res)
+                cityName.textContent = searchValue;
+                imageid.style.display = 'block';
+                imageid.src = res.weatherStatusIcon;
+                
             }  
         })
     })

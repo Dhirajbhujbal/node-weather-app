@@ -10,13 +10,17 @@
 <body>
     {{>header}}
     <div>
+        <p class="cityName"></p>      
         <input class="inputBox" type="text" placeholder="Enter Location Name" />
-        <button id='searchId'>Search</button>      
+        <button id='searchId'>Search</button>
     </div>
     <div>
         <h3 id='rportCardHeader'>Weather Report for enterted city</h3>
         <p id='forecastInfo1'></p>
         <p id='forecastInfo2'></p>
+    </div>
+    <div>
+        <img id='imageId' />
     </div>
     {{>footer}}
 </body>
