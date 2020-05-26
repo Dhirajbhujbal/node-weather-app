@@ -4,10 +4,15 @@ const app = express();
 const hbs = require('hbs');
 const getGeoCodeObj = require('./util/geocode');
 const foreCastObj = require('./util/forcast');
+
+const port = process.env.PORT || 3000
+
 // Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname,'../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials')
+
+
 
 
 // Setup handlebars serach engine and view locations.
@@ -99,8 +104,8 @@ app.get('*', (req, response) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is started and listning on port 3000');
+app.listen(port, () => {
+    console.log(`Server is started and listning on port ${port}`);
 });
 
 

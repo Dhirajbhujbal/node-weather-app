@@ -1,7 +1,7 @@
 
-fetch('https://jsonplaceholder.typicode.com/todos/1').then( res => res.json() ).then( (res) => {
-    console.log(JSON.stringify(res));
-})
+// fetch('https://jsonplaceholder.typicode.com/todos/1').then( res => res.json() ).then( (res) => {
+//     console.log(JSON.stringify(res));
+// })
 
 
 setTimeout( () => {
@@ -12,7 +12,7 @@ setTimeout( () => {
     btnId.addEventListener('click', (e) => {
         const searchValue = document.getElementsByClassName('inputBox')[0].value
         forecastInfo1.textContent = 'Loading.......';
-        fetch(`http://localhost:3000/weather?address=${searchValue}`).then((res) => {
+        fetch(`/weather?address=${searchValue}`).then((res) => {
             return res.json();
         }).then((res) => {
             if(res.error) {
