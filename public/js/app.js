@@ -3,7 +3,6 @@ fetch('https://jsonplaceholder.typicode.com/todos/1').then( res => res.json() ).
     console.log(JSON.stringify(res));
 })
 
-// AIzaSyCARy7b9s8sJElX4ql2nt-U-rLr14kYOEI
 
 setTimeout( () => {
     const btnId = document.getElementById('searchId');
