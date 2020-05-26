@@ -29,7 +29,6 @@ setTimeout( () => {
                 cityName.textContent = '';
                 imageid.style.display = 'none';
             } else {
-                console.log('weatherStatusIcon    ----', res.weatherStatusIcon)
                 rportCardHeader.style.display = 'block';
                 forecastInfo1.textContent = res.foreCastWeatherSummary;
                 forecastInfo2.textContent = res.locationName;
