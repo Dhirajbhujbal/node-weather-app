@@ -12,7 +12,7 @@ setTimeout( () => {
     btnId.addEventListener('click', (e) => {
         const searchValue = document.getElementsByClassName('inputBox')[0].value
         forecastInfo1.textContent = 'Loading.......';
-        fetch(`/weather?address=${searchValue}`).then((res) => {
+        fetch(`http://localhost:3000/weather?address=${searchValue}`).then((res) => {
             return res.json();
         }).then((res) => {
             if(res.error) {
